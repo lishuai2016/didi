@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body >
+<h1 align="center">请输入您所在的经纬度</h1>
+<h3 align="center">经纬度信息小常识</h3>
+<p>
+
+东西半球的坐标范围是-180到180，负坐标代表西半球，正坐标代表东半球，伦敦位于东西半球的交界，所以伦敦的横坐标是0<br>
+
+南北半球的坐标范围是-90到90，负坐标代表南半球，正坐标代表北半球<br>
+
+我国的经纬度范围：<br>
+
+经度范围:73°33′E至135°05′E<br>
+纬度范围:3°51′N至53°33′N<br>
+最北端在黑龙江省漠河乌苏里浅滩黑龙江主航道中心线上(53°33′47〃N)，最南端在南海的南沙群岛中的立地暗沙(3°51′N，112°16′E)(在曾母暗沙西南约15海里)。<br>
+最东端在黑龙江省黑瞎子岛(48°27′N，135°05′E)，最西端在新疆帕米尔高原，约在中、塔、吉三国边界交点西南方约25公里处，那里有一座海拔5000米以上的雪峰。(39°15′N、73°33′E)。<br>
+</p><br><br><br>
+
+<h3 align="center">建议您输入的经度范围:73°33′E至135°05′E，建议您输入的经度纬度范围:3°51′N至53°33′N</h1>
+<table align="center">
+<form action="map.html" id = "form" >
+	经度： <input type="text" id="lng" name="lng"><span id="lngMsg"  style="color:red"></span><br> 
+	纬度： <input type="text" id="lat" name="lat"> <span id="latMsg"  style="color:red"></span><br>
+	<input type="submit" value="搜一下附近的滴滴车辆" class="btn_s"><br>
+</form>
+
+
+</table>
+
+</body>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+$("#form").submit( function(event){
+	$("#lngMsg").text('');
+	$("#latMsg").text('');
+	var lng = $("#lng").val();
+	var lat = $("#lat").val();
+	if (!(lng > 72 && lng < 136)) {		
+		$("#lngMsg").html("对不起，您输入的经度信不符合要求,请重新输入！");
+		return false;	
+	} else if (!(lat > 3 && lat < 53)) {
+		$("#latMsg").html("对不起，您输入的纬度信不符合要求！请重新输入");
+		return false;
+	} else {
+		return true;
+	}	
+});
+</script>
+
+
+</html>
